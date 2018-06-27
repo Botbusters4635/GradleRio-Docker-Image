@@ -15,7 +15,7 @@ cd GradleRio-Docker-Image #(Or cd GradleRio-Docker-Image-Master if you downloade
 ```
 3. Install the script
 ```bash
-make install
+sudo make install
 ```
 4. Run the build (In your program directory)
 ```bash
