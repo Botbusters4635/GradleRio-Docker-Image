@@ -5,11 +5,19 @@ This Docker image contains the necessary packages to compile programs for FRC Ro
 
 ### Instructions
 
-1. Install the script
+1. Clone the repository (or download the repository from GitHub)
+```bash
+git clone https://github.com/Botbusters4635/GradleRio-Docker-Image.git
+```
+2. Navigate to the repository folder
+```bash
+cd GradleRio-Docker-Image #(Or cd GradleRio-Docker-Image-Master if you downloaded the .zip file from GitHub)
+```
+3. Install the script
 ```bash
 make install
 ```
-2. Run the build (In your program directory)
+4. Run the build (In your program directory)
 ```bash
 Gradlerio-Docker build
 ```
