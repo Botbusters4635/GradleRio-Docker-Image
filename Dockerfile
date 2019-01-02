@@ -1,14 +1,5 @@
-FROM ubuntu:artful
+FROM ubuntu:bionic
 MAINTAINER Abiel empoleom@gmail.com
 
-#Add WPILib Repository and install the frc-toolchain
-RUN apt-get update && \
-	 apt-get -y install dirmngr && \
-	 echo "deb http://ppa.launchpad.net/wpilib/toolchain/ubuntu artful main" >> /etc/apt/sources.list && \
-	 echo "deb-src http://ppa.launchpad.net/wpilib/toolchain/ubuntu artful main" >> /etc/apt/sources.list && \
-	 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D51C1F785D5D961140546F3AA06B9F8D55FC4DAE && \
-	 apt-get update && \
-	 apt-get -y install frc-toolchain
-
-#Install java
-RUN apt-get -y install default-jdk
+#Clone the GradleRio repo and install the toolchain
+RUN apt-get update && apt-get install -y git openjdk-11-jdk googletest && git clone https://github.com/wpilibsuite/GradleRIO.git && cd GradleRIO/examples/cpp && ./gradlew installRoboRioToolchain && cd / && rm -Rf GradleRIO && rm -rf /var/lib/apt/lists/*
